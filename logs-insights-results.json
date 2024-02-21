@@ -1,0 +1,1995 @@
+[
+  {
+    "@timestamp": "2023-08-03 09:55:10.884",
+    "@message": {
+      "timestamp": 1691056510884,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/0AB440D7-1672-4216-9EF0-037CE6E9D7A1"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=0"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad298ff1064514cba9813c6056e04d1-bad298ff1064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404e03200003d5d6ef9509c50909058171e7346d9823c2f90a8"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056510"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoAiR9ENhMeAAAA:ApzNgx2KfUL3jv0t2o4FQq8A+dDTtSKMlB9siAkOym6AMzZNDJN7m7tKGGDS4Nf817c5XkbvdoJ3d5/4I02+Tz2Ay9bNZbLeHhUcoJlQpfkd8zPBqyXznxJNcN/z4fS75l209D6RiU0SovM0y7vNoIJaNqNjBEaUepNe4aq6TTCouyR9KrCq0UWP3EarwO0BrP7LFq/eASVwR6BvJ+CFnTWsdK2dS61kV1Ueb/8zvA6iL5auhscMw5AVEUFSL7VJ/y1pMqsaPufCnoxV"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "I1L3ebolkq66GV60hdQoqec5p5BrWRTdmmY6nj7CajJCeVDWDCOt_A=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:55:10.399",
+    "@message": {
+      "timestamp": 1691056510399,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/0AB440D7-1672-4216-9EF0-037CE6E9D7A1"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=0"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad297191064514cba9813c6055904d1-bad297191064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404e03b000081849b08686ebafb66a30ea1a25096be9f9040b1"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056510"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoAiR9ENhMeAAAA:ApzNgx2KfUL3jv0t2o4FQq8A+dDTtSKMlB9siAkOym6AMzZNDJN7m7tKGGDS4Nf817c5XkbvdoJ3d5/4I02+Tz2Ay9bNZbLeHhUcoJlQpfkd8zPBqyXznxJNcN/z4fS75l209D6RiU0SovM0y7vNoIJaNqNjBEaUepNe4aq6TTCouyR9KrCq0UWP3EarwO0BrP7LFq/eASVwR6BvJ+CFnTWsdK2dS61kV1Ueb/8zvA6iL5auhscMw5AVEUFSL7VJ/y1pMqsaPufCnoxV"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "mHKKj9kJMIVXc1zDa7n0rQlhBeI7t0uWR8aHib33t4IX8kfbtHAJMw=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:55:08.375",
+    "@message": {
+      "timestamp": 1691056508375,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/0AB440D7-1672-4216-9EF0-037CE6E9D7A1"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=0"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad28f2c1064514cba9813c605a304d1-bad28f2c1064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404c0b8000024a7d8add172765f69637a4f78e21d9e3e0ee296"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056508"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoAiR9ENhMeAAAA:ApzNgx2KfUL3jv0t2o4FQq8A+dDTtSKMlB9siAkOym6AMzZNDJN7m7tKGGDS4Nf817c5XkbvdoJ3d5/4I02+Tz2Ay9bNZbLeHhUcoJlQpfkd8zPBqyXznxJNcN/z4fS75l209D6RiU0SovM0y7vNoIJaNqNjBEaUepNe4aq6TTCouyR9KrCq0UWP3EarwO0BrP7LFq/eASVwR6BvJ+CFnTWsdK2dS61kV1Ueb/8zvA6iL5auhscMw5AVEUFSL7VJ/y1pMqsaPufCnoxV"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "hi5ACrDatDdnMKd-WM9KoNBxIXzAR1xakhrWoajK9ziONsb7M2J00w=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:55:06.977",
+    "@message": {
+      "timestamp": 1691056506977,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "sdk-version",
+            "value": "2"
+          },
+          {
+            "name": "x-tt-cmpl-token",
+            "value": "AgQQAPORF-RPsLFlj5bb8d08_jDViTeM_4caYM2WJg"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "none"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/0AB440D7-1672-4216-9EF0-037CE6E9D7A1 TTP_H5_URLPROTOCOL"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "passport-sdk-version",
+            "value": "5.12.1"
+          },
+          {
+            "name": "x-tt-dm-status",
+            "value": "login=1;ct=1;rt=1"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "x-tt-store-region",
+            "value": "de"
+          },
+          {
+            "name": "x-tt-store-region-src",
+            "value": "uid"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=0"
+          },
+          {
+            "name": "x-ss-dp",
+            "value": "1233"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad2892d1064514cba9813c6055604d1-bad2892d1064514c-01"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "840400fb00009d96ffa089f6473c0268659aae864f27ba890e63"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056506"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoAiR9ENhMeAAAA:ApzNgx2KfUL3jv0t2o4FQq8A+dDTtSKMlB9siAkOym6AMzZNDJN7m7tKGGDS4Nf817c5XkbvdoJ3d5/4I02+Tz2Ay9bNZbLeHhUcoJlQpfkd8zPBqyXznxJNcN/z4fS75l209D6RiU0SovM0y7vNoIJaNqNjBEaUepNe4aq6TTCouyR9KrCq0UWP3EarwO0BrP7LFq/eASVwR6BvJ+CFnTWsdK2dS61kV1Ueb/8zvA6iL5auhscMw5AVEUFSL7VJ/y1pMqsaPufCnoxV"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "qr1G9CQFbytaH4kYKhTVQ3SLzH4WRxaNRuB_C90ZLJjyZXcjGRc5iA=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:44.935",
+    "@message": {
+      "timestamp": 1691056484935,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/CCF37355-D4AE-49F2-B6C2-A94E9579F74E"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad233a21064514cba9813c6050504d1-bad233a21064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "840480d900005941821ad955288f719e8665413df638cca0d2ff"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056484"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoArZBD51ocAAAA:1V8kBsxafqED8Sq82FT2Q+D9eSSPCiMvAjJgfUoVJ89rc8RJ959juYQlSnBl4SKwMnt60J0L8OwUYMEX+MuE2hZGPJOwsqU8SxnfFwxHYVNJJB/a11XnnWkG83waxPcNFQlHtijcUJy+JCLvXrYvtZgxweHhoc1kfvCLcOL6xEVE2VDjXzkPUYQ48Ei3CaOhoOTXszIO6nVyM5BmsnEgbjvkHlTbQXx/r5ovLWF4TUy1tF4KRb+xx3D/ebeF0zU68ymhc43V3L3Yj5uk"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "R0Wabwuvhc2GQEYcobAZrzg4WztnXURc1d7EaHWH7gbAHf42oHjv3A=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:44.475",
+    "@message": {
+      "timestamp": 1691056484475,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/CCF37355-D4AE-49F2-B6C2-A94E9579F74E"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad231d51064514cba9813c6051804d1-bad231d51064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404806b000028873ab1dc6411d70d1b199db072fc579b1d974d"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056484"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoArZBD51ocAAAA:1V8kBsxafqED8Sq82FT2Q+D9eSSPCiMvAjJgfUoVJ89rc8RJ959juYQlSnBl4SKwMnt60J0L8OwUYMEX+MuE2hZGPJOwsqU8SxnfFwxHYVNJJB/a11XnnWkG83waxPcNFQlHtijcUJy+JCLvXrYvtZgxweHhoc1kfvCLcOL6xEVE2VDjXzkPUYQ48Ei3CaOhoOTXszIO6nVyM5BmsnEgbjvkHlTbQXx/r5ovLWF4TUy1tF4KRb+xx3D/ebeF0zU68ymhc43V3L3Yj5uk"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "iAObHglGW5q2VG8zWfts6cuVY0ZuICR0lGnI0aVYb0ivAHz1iSjazg=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:43.905",
+    "@message": {
+      "timestamp": 1691056483905,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/CCF37355-D4AE-49F2-B6C2-A94E9579F74E"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad22f961064514cba9813c605c104d1-bad22f961064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "840440d4000067ff74971e51c91828ee7f9f5874c6c24625aadd"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056483"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoArZBD51ocAAAA:1V8kBsxafqED8Sq82FT2Q+D9eSSPCiMvAjJgfUoVJ89rc8RJ959juYQlSnBl4SKwMnt60J0L8OwUYMEX+MuE2hZGPJOwsqU8SxnfFwxHYVNJJB/a11XnnWkG83waxPcNFQlHtijcUJy+JCLvXrYvtZgxweHhoc1kfvCLcOL6xEVE2VDjXzkPUYQ48Ei3CaOhoOTXszIO6nVyM5BmsnEgbjvkHlTbQXx/r5ovLWF4TUy1tF4KRb+xx3D/ebeF0zU68ymhc43V3L3Yj5uk"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "ujVVhupKoFTx9ekl05sLfNel7q6Brr2xcuSU9693Pw-3Y94t-uqxTg=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:42.537",
+    "@message": {
+      "timestamp": 1691056482537,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "none"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/CCF37355-D4AE-49F2-B6C2-A94E9579F74E"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad22a431064514cba9813c6057804d1-bad22a431064514c-01"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404a0df00002c8bc5b1b2dff1eaa41ffa6b2fec76fa9e18ada6"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056482"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoArZBD51ocAAAA:1V8kBsxafqED8Sq82FT2Q+D9eSSPCiMvAjJgfUoVJ89rc8RJ959juYQlSnBl4SKwMnt60J0L8OwUYMEX+MuE2hZGPJOwsqU8SxnfFwxHYVNJJB/a11XnnWkG83waxPcNFQlHtijcUJy+JCLvXrYvtZgxweHhoc1kfvCLcOL6xEVE2VDjXzkPUYQ48Ei3CaOhoOTXszIO6nVyM5BmsnEgbjvkHlTbQXx/r5ovLWF4TUy1tF4KRb+xx3D/ebeF0zU68ymhc43V3L3Yj5uk"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "FcSQ8p5gXgmAEOwuQW4KWYkkIXODfGFYdFW893b3oW0gg_RwCC8jhA=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:41.357",
+    "@message": {
+      "timestamp": 1691056481357,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "sdk-version",
+            "value": "2"
+          },
+          {
+            "name": "x-tt-cmpl-token",
+            "value": "AgQQAPORF-RPsLFlj5bb8d08_jDViTeM_4caYM2TPA"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "none"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/94DE4C3B-6F65-484D-BD3C-073F4777306C TTP_H5_URLPROTOCOL"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "passport-sdk-version",
+            "value": "5.12.1"
+          },
+          {
+            "name": "x-tt-dm-status",
+            "value": "login=1;ct=1;rt=1"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8"
+          },
+          {
+            "name": "x-tt-store-region",
+            "value": "de"
+          },
+          {
+            "name": "x-tt-store-region-src",
+            "value": "uid"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-ss-dp",
+            "value": "1233"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad223de1064514cba9813c6053f04d1-bad223de1064514c-01"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "840440f800001f71db2b931fa81687fe0527f8729808b66adf93"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056481"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=bc295cd6-feb4-4430-94a5-fadca675e96c:CQoArZBD51ocAAAA:1V8kBsxafqED8Sq82FT2Q+D9eSSPCiMvAjJgfUoVJ89rc8RJ959juYQlSnBl4SKwMnt60J0L8OwUYMEX+MuE2hZGPJOwsqU8SxnfFwxHYVNJJB/a11XnnWkG83waxPcNFQlHtijcUJy+JCLvXrYvtZgxweHhoc1kfvCLcOL6xEVE2VDjXzkPUYQ48Ei3CaOhoOTXszIO6nVyM5BmsnEgbjvkHlTbQXx/r5ovLWF4TUy1tF4KRb+xx3D/ebeF0zU68ymhc43V3L3Yj5uk"
+          }
+        ],
+        "uri": "/",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "ikWjkfL7KNYD96L2fdYq747e49-d1flv9ic4Y4NvLFvsP1CpvY0n8A=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:19.847",
+    "@message": {
+      "timestamp": 1691056459847,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "*/*"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "no-cors"
+          },
+          {
+            "name": "cache-control",
+            "value": "max-age=0"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "script"
+          },
+          {
+            "name": "if-none-match",
+            "value": "W/\"1063b6d9e1d6f0261526f612723c2645\""
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/D94314A8-4307-4C3E-BB04-A953DB37C2A2"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "if-modified-since",
+            "value": "Mon, 31 Jul 2023 14:40:26 GMT"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad1d1a31064514cba9813c605a504d1-bad1d1a31064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404e0190000c9c5a3883b4fa1fc495cc48db0aae2cbfdc59347"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056459"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=b7e19bbe-de44-4345-a36b-3dcb78759f6d:CQoAgRROto4YAAAA:9wd0I7evF0KakB9EYg70XUQSWMw73KPk3B8CWavKsezFqeN6Im+1vMujmvrU4fvXMMt9ZTMXXD4WVfHrBlzYYA9b08oths4iJlrFN8MyIn+5B1co/4QzmIeHzTpPC6DZIJfg/pg+BWa+QlP5dvpfWlFZj58jmsoFf3u9O1z72zSQCd1i78BGp4qs04Qjy+4Uv72SH5zpdxXcIG0IpcC+l0be0WZ6Ce0HM+nH4XE8LOxE8FobcC+i8XtdGJxEv3TKkXXlYfq6xQ6Rikmg"
+          }
+        ],
+        "uri": "/static/js/main.9b5977e1.js",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "uIK5mS247BQjeN06YbymN77FsfZ_jMIs2Djbcdj4sLk8jiRdzY4xlg=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:19.842",
+    "@message": {
+      "timestamp": 1691056459842,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "*/*"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "no-cors"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "manifest"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/D94314A8-4307-4C3E-BB04-A953DB37C2A2"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad1d19c1064514cba9813c6054104d1-bad1d19c1064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404a0d20000ed0c9c87e8d18ced8b9d4bdfdc0f36b769b50bab"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056459"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=b7e19bbe-de44-4345-a36b-3dcb78759f6d:CQoAgRROto4YAAAA:9wd0I7evF0KakB9EYg70XUQSWMw73KPk3B8CWavKsezFqeN6Im+1vMujmvrU4fvXMMt9ZTMXXD4WVfHrBlzYYA9b08oths4iJlrFN8MyIn+5B1co/4QzmIeHzTpPC6DZIJfg/pg+BWa+QlP5dvpfWlFZj58jmsoFf3u9O1z72zSQCd1i78BGp4qs04Qjy+4Uv72SH5zpdxXcIG0IpcC+l0be0WZ6Ce0HM+nH4XE8LOxE8FobcC+i8XtdGJxEv3TKkXXlYfq6xQ6Rikmg"
+          }
+        ],
+        "uri": "/manifest.json",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "w5VBzqYA2a8Pz7OCjPWTZNMjJb7WWJuuQAm27WCeMaru4Nwy6HDDRg=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:19.524",
+    "@message": {
+      "timestamp": 1691056459524,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "*/*"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "no-cors"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "script"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/D94314A8-4307-4C3E-BB04-A953DB37C2A2"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad1d05f1064514cba9813c6053804d1-bad1d05f1064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "8404a0bb0000383fadb833cc90ba166886e3cdd36b333e48c1d0"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056459"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=b7e19bbe-de44-4345-a36b-3dcb78759f6d:CQoAgRROto4YAAAA:9wd0I7evF0KakB9EYg70XUQSWMw73KPk3B8CWavKsezFqeN6Im+1vMujmvrU4fvXMMt9ZTMXXD4WVfHrBlzYYA9b08oths4iJlrFN8MyIn+5B1co/4QzmIeHzTpPC6DZIJfg/pg+BWa+QlP5dvpfWlFZj58jmsoFf3u9O1z72zSQCd1i78BGp4qs04Qjy+4Uv72SH5zpdxXcIG0IpcC+l0be0WZ6Ce0HM+nH4XE8LOxE8FobcC+i8XtdGJxEv3TKkXXlYfq6xQ6Rikmg"
+          }
+        ],
+        "uri": "/static/js/6572.bee5f0f0.chunk.js",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "qHGL4j5hjAgSX-MF_VHQQs1fwzo_pN6IOjYUflnHdKtqFXOaD9K7lQ=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:54:19.520",
+    "@message": {
+      "timestamp": 1691056459520,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "accept",
+            "value": "*/*"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "no-cors"
+          },
+          {
+            "name": "x-vc-bdturing-sdk-version",
+            "value": "2.3.2"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "script"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (iPhone; CPU iPhone OS 16_5_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 BytedanceWebview/d8a21c6 musical_ly_30.5.0 JsSdk/2.0 NetType/WIFI Channel/App Store ByteLocale/en Region/DE FalconTag/D94314A8-4307-4C3E-BB04-A953DB37C2A2"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "same-origin"
+          },
+          {
+            "name": "x-tt-web-proxy",
+            "value": "TTNet"
+          },
+          {
+            "name": "x-bd-kmsv",
+            "value": "0"
+          },
+          {
+            "name": "x-tt-request-tag",
+            "value": "s=1"
+          },
+          {
+            "name": "x-tt-trace-id",
+            "value": "00-bad1d05d1064514cba9813c6054d04d1-bad1d05d1064514c-01"
+          },
+          {
+            "name": "referer",
+            "value": "https://sharethemeal.org/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "x-gorgon",
+            "value": "840400be000078b3f791d82a2d9ab63b743c9c8d9babb8e9bcec"
+          },
+          {
+            "name": "x-khronos",
+            "value": "1691056459"
+          },
+          {
+            "name": "cookie",
+            "value": "_tt_enable_cookie=1; _ttp=ZnyPG_VoE1JqtUg11g1CfnozyUs; _ga=GA1.1.175179039.1690799174; _ga_N348N6YQFE=GS1.1.1690799174.1.1.1690802067.60.0.0; __stripe_mid=571ac351-9035-4817-88ea-03b215e0770e0b419d; _fbp=fb.1.1690802067548.1698608870; aws-waf-token=b7e19bbe-de44-4345-a36b-3dcb78759f6d:CQoAgRROto4YAAAA:9wd0I7evF0KakB9EYg70XUQSWMw73KPk3B8CWavKsezFqeN6Im+1vMujmvrU4fvXMMt9ZTMXXD4WVfHrBlzYYA9b08oths4iJlrFN8MyIn+5B1co/4QzmIeHzTpPC6DZIJfg/pg+BWa+QlP5dvpfWlFZj58jmsoFf3u9O1z72zSQCd1i78BGp4qs04Qjy+4Uv72SH5zpdxXcIG0IpcC+l0be0WZ6Ce0HM+nH4XE8LOxE8FobcC+i8XtdGJxEv3TKkXXlYfq6xQ6Rikmg"
+          }
+        ],
+        "uri": "/static/js/5717.a3e02de5.chunk.js",
+        "args": "",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "7R7RDa05zpt6jGwB0HLyXOf05O7OtcZ6ztvnvqXU4k0YRbI_Y0tLOQ=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  },
+  {
+    "@timestamp": "2023-08-03 09:29:58.754",
+    "@message": {
+      "timestamp": 1691054998754,
+      "formatVersion": 1,
+      "webaclId": "arn:aws:wafv2:us-east-1:603869643658:global/webacl/web-app-acl/16d3bce6-f913-4990-a303-3030a6451e0c",
+      "terminatingRuleId": "AWS-AWSManagedRulesBotControlRuleSet",
+      "terminatingRuleType": "MANAGED_RULE_GROUP",
+      "action": "CHALLENGE",
+      "terminatingRuleMatchDetails": [],
+      "httpSourceName": "CF",
+      "httpSourceId": "E21AFRGYI5ULMM",
+      "ruleGroupList": [
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/allow-logo-favicon-apple-touch/b700b0e6-b72f-4ae3-8015-10097d5497ec",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "arn:aws:wafv2:us-east-1:603869643658:global/rulegroup/web-app-custom-rulegroup/dfab959d-31f8-46b2-b74e-11c4f4aa62af",
+          "terminatingRule": null,
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": null
+        },
+        {
+          "ruleGroupId": "AWS#AWSManagedRulesBotControlRuleSet",
+          "terminatingRule": {
+            "ruleId": "TGT_VolumetricIpTokenAbsent",
+            "action": "CHALLENGE",
+            "ruleMatchDetails": null
+          },
+          "nonTerminatingMatchingRules": [],
+          "excludedRules": null,
+          "customerConfig": [
+            {
+              "name": "InspectionLevel",
+              "value": "TARGETED"
+            }
+          ]
+        }
+      ],
+      "rateBasedRuleList": [],
+      "nonTerminatingMatchingRules": [],
+      "requestHeadersInserted": null,
+      "responseCodeSent": 202,
+      "httpRequest": {
+        "clientIp": "89.247.164.210",
+        "country": "DE",
+        "headers": [
+          {
+            "name": "host",
+            "value": "sharethemeal.org"
+          },
+          {
+            "name": "sec-ch-ua",
+            "value": "\"Not.A/Brand\";v=\"8\", \"Chromium\";v=\"114\", \"Google Chrome\";v=\"114\""
+          },
+          {
+            "name": "sec-ch-ua-mobile",
+            "value": "?0"
+          },
+          {
+            "name": "sec-ch-ua-platform",
+            "value": "\"macOS\""
+          },
+          {
+            "name": "upgrade-insecure-requests",
+            "value": "1"
+          },
+          {
+            "name": "user-agent",
+            "value": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36"
+          },
+          {
+            "name": "accept",
+            "value": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7"
+          },
+          {
+            "name": "sec-fetch-site",
+            "value": "cross-site"
+          },
+          {
+            "name": "sec-fetch-mode",
+            "value": "navigate"
+          },
+          {
+            "name": "sec-fetch-dest",
+            "value": "document"
+          },
+          {
+            "name": "referer",
+            "value": "https://l.facebook.com/"
+          },
+          {
+            "name": "accept-encoding",
+            "value": "gzip, deflate, br"
+          },
+          {
+            "name": "accept-language",
+            "value": "en-GB,en;q=0.9,ru-RU;q=0.8,ru;q=0.7,en-US;q=0.6"
+          },
+          {
+            "name": "cookie",
+            "value": "AMP_MKTG_9ebf67de1f=JTdCJTdE; _ga=GA1.1.938040189.1682078696; _tt_enable_cookie=1; _ttp=FNp0QWNSLRoVCm_mODUeO0oqipq; G_ENABLED_IDPS=google; AMP_9ebf67de1f=JTdCJTIyZGV2aWNlSWQlMjIlM0ElMjJjOWZkN2Q1NS1jZmY2LTQwM2MtOGI2Ny1iNmY3MTliZGEwMzAlMjIlMkMlMjJzZXNzaW9uSWQlMjIlM0ExNjgyNDMyMzc3NjM2JTJDJTIyb3B0T3V0JTIyJTNBZmFsc2UlN0Q=; _ga_0NGMM8428M=GS1.1.1688131251.6.0.1688131251.0.0.0; aws-waf-token=e30b3c4f-0878-418c-80a3-b030388ae7da:CQoArhh66eYAAAAA:cinX/mGI2eQuHdR1AmWqjpYvwfH+F3iNTk5NKSOMtsX9NC7h/StZ/mqypLqCVRIyJVOPiNwAdFQtFxt9wAuiTGFvlRFGy+Fixo3J2grKLUlgx3TiznansslMT83kTC81pz6iXcw5EjyZIkdln8u/wwon7LQuHiwaoLbdzWI2d43I/XRd+FQhoNeYCtJBc7z7RTudaM7ZXMnZEIZhNUJ7HJ4yFtFYAB0EOCKPKpO6McEImJ7018krs87dEG7OoDiBqBq9kcLkfidULaFkvyzouQ26Bxkbn7Duyg==; _ga_N348N6YQFE=GS1.1.1690833226.6.0.1690833226.60.0.0"
+          }
+        ],
+        "uri": "/",
+        "args": "fbclid=IwAR3CAz-8ZYe2oVNVwe-xj1yutluekM3q_73BSiO8ObAsi9Q1vK-lyw7aBmY",
+        "httpVersion": "HTTP/2.0",
+        "httpMethod": "GET",
+        "requestId": "-hW0LlNfsdleGB3t_TgOFs-FUUhEMSOmzynu0Rguv8fIObcPIdKEZw=="
+      },
+      "labels": [
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:aggregate:volumetric:ip:token_absent"
+        },
+        {
+          "name": "awswaf:managed:token:rejected"
+        },
+        {
+          "name": "awswaf:managed:aws:bot-control:targeted:signal:browser_inconsistency"
+        }
+      ],
+      "challengeResponse": {
+        "responseCode": 202,
+        "failureReason": "TOKEN_EXPIRED"
+      }
+    }
+  }
+]
