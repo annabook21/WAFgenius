@@ -4,6 +4,9 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
 
+# Global variable to hold the path of the selected log file
+selected_file_path = None
+
 def read_logs_into_dataframe(file_path):
     try:
         # Load logs into a pandas DataFrame
@@ -79,17 +82,26 @@ def main():
 
 # GUI Functions
 def open_file():
+    global selected_file_path  # Use the global variable
     filename = filedialog.askopenfilename(initialdir="/", title="Select File",
                                           filetypes=(("json files", "*.json"), ("all files", "*.*")))
     if filename:
-        # Here, integrate your logic to read and process the file
-        print(f"File selected: {filename}")
+        selected_file_path = filename  # Update the global variable
+        print(f"File selected: {selected_file_path}")  # Optional: confirm the selected file path
 
 def analyze_logs():
-    global selected_file_path  # Assumes you have a variable to hold the selected log file path
+    global selected_file_path  # Although not necessary for reading, it's good practice
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
         return
+    
+    # Proceed with analysis using the selected file path
+    df = read_logs_into_dataframe(selected_file_path)
+    if df.empty:
+        messagebox.showinfo("Analysis Result", "The log file contains no data.")
+    else:
+        calculate_advanced_metrics(df)
+        messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
     
     # Read and analyze the log file
     df = read_logs_into_dataframe(selected_file_path)
