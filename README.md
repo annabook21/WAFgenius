@@ -1,6 +1,6 @@
-# AWS WAF Log Analysis Tool
+# WAFgenius
 
-This AWS WAF Log Analysis Tool provides detailed insights into web traffic and security threats by analyzing AWS WAF logs. It includes features for basic metrics calculation, rule trigger analysis, and GeoIP analysis to identify the geographic locations of source IP addresses.
+The WAFgenius provides detailed insights into web traffic and security threats by analyzing AWS WAF logs. It includes features for basic metrics calculation, rule trigger analysis, and GeoIP analysis to identify the geographic locations of source IP addresses.
 
 ## Features
 
