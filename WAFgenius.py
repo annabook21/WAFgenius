@@ -1,5 +1,8 @@
 import pandas as pd
 import geoip2.database
+import tkinter as tk
+from tkinter import filedialog, messagebox, Text
+import os
 
 def read_logs_into_dataframe(file_path):
     try:
@@ -73,3 +76,17 @@ def lookup_geoip(ip_address):
     except Exception as e:
         print(f"GeoIP lookup error: {e}")
         return None, None
+
+app = tk.Tk()
+app.title("WAFgenius")
+
+canvas = tk.Canvas(app, height=600, width=800)
+canvas.pack()
+
+openFileBtn = tk.Button(app, text="Open Log File", padx=10, pady=5, fg="white", bg="#263D42", command=open_file)
+openFileBtn.pack()
+
+analyzeBtn = tk.Button(app, text="Analyze Logs", padx=10, pady=5, fg="white", bg="#263D42", command=analyze_logs)
+analyzeBtn.pack()
+
+app.mainloop()
