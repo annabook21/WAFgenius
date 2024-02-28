@@ -176,7 +176,7 @@ def analyze_blocked_requests_by_source(df, output_file_path):
 def main():
     log_file_path = 'path/to/your/logfile.json'  # Update this path to your log file
     df = read_logs_into_dataframe(log_file_path)
-    calculate_advanced_metrics(df)  # Call the enhanced function
+    calculate_advanced_metrics(df, output_file_path)  # Call the enhanced function
 
 # GUI Functions
 def open_file():
@@ -203,7 +203,7 @@ def analyze_logs():
     if df.empty:
         messagebox.showinfo("Analysis Result", "The log file contains no data.")
     else:
-        calculate_advanced_metrics(df)
+        calculate_advanced_metrics(df, output_file_path)
         messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
     
     # Read and analyze the log file
@@ -211,7 +211,7 @@ def analyze_logs():
     if df.empty:
         messagebox.showinfo("Analysis Result", "The selected log file contains no data.")
     else:
-        calculate_advanced_metrics(df)
+        calculate_advanced_metrics(df, output_file_path)
         # Here you might update the application window with analysis results
         # For example, displaying top source IPs, blocked requests, etc., in the GUI.
         messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
