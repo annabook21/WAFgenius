@@ -154,7 +154,7 @@ for ip in ips:
     current_time += timedelta(seconds=random.randint(1, 10))
 
 # Save the log entries to a file
-with open('C:\Users\asiabook\Desktop\Python\WAFgenius/ddos_log.json', 'w') as f:
+with open('C:\Users\exampleuser\Desktop\Python\WAFgenius/ddos_log.json', 'w') as f:
     json.dump(log_entries, f, indent=2)
 
 print(f"Generated {len(log_entries)} log entries.")
