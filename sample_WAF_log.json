@@ -1,0 +1,60 @@
+{
+  "timestamp": 1702247109801,
+  "formatVersion": 1,
+  "webaclId": "arn:aws:wafv2:us-east-1:967656721914:global/webacl/api-sit1-npd-nser-cc/48aac4cb-a29e-400b-b6d0-a3ce6a16b250",
+  "terminatingRuleId": "Default_Action",
+  "terminatingRuleType": "REGULAR",
+  "action": "BLOCK",
+  "terminatingRuleMatchDetails": [],
+  "httpSourceName": "CF",
+  "httpSourceId": "E1DAKR35WPU1XL",
+  "ruleGroupList": [
+    {
+      "ruleGroupId": "arn:aws:wafv2:us-east-1:967656721914:global/rulegroup/api-sit1-npd-nser-cc-fileuploads/856e622b-990b-4968-9dd8-b5ab125aa968",
+      "terminatingRule": null,
+      "nonTerminatingMatchingRules": [],
+      "excludedRules": null,
+      "customerConfig": null
+    },
+    {
+      "ruleGroupId": "arn:aws:wafv2:us-east-1:967656721914:global/rulegroup/api-sit1-npd-nser-cc-challenge-token/b302672b-7ce0-4656-9220-fc6383a0f0b7",
+      "terminatingRule": null,
+      "nonTerminatingMatchingRules": [
+        {
+          "ruleId": "challenge_token-block-invalid",
+          "action": "COUNT",
+          "ruleMatchDetails": []
+        }
+      ],
+      "excludedRules": null,
+      "customerConfig": null
+    }
+  ],
+  "rateBasedRuleList": [],
+  "nonTerminatingMatchingRules": [],
+  "requestHeadersInserted": null,
+  "responseCodeSent": null,
+  "httpRequest": {
+    "clientIp": "5.62.57.1",
+    "headers": [
+      {
+        "name": "host",
+        "value": "api-sit1.npd.nser.cc"
+      },
+      {
+        "name": "content-length",
+        "value": "236"
+      }
+      // Additional headers as needed
+    ],
+    "uri": "/ri/v1/interaction",
+    "args": "",
+    "httpVersion": "HTTP/2.0",
+    "httpMethod": "POST",
+    "requestId": "RURequest1"
+  },
+  "labels": [],
+  "requestBodySize": 0,
+  "requestBodySizeInspectedByWAF": 0,
+  "ja3Fingerprint": ""
+}
