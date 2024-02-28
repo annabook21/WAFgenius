@@ -144,7 +144,7 @@ def open_file():
         print(f"File selected: {selected_file_path}")  # Optional: confirm the selected file path
 
 def analyze_logs():
-    global selected_file_path  # Although not necessary for reading, it's good practice
+    global selected_file_path  
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
         return
@@ -163,11 +163,9 @@ def analyze_logs():
         messagebox.showinfo("Analysis Result", "The selected log file contains no data.")
     else:
         calculate_advanced_metrics(df)
-        # Here you might update the application window with analysis results
-        # For example, displaying top source IPs, blocked requests, etc., in the GUI.
         messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
 
-def setup_classic_windows_look():
+def setup_app_look():
     style = ttk.Style()
     style.theme_use('clam')  # Use the 'clam' theme as a base for a classic look
     
@@ -185,8 +183,8 @@ def setup_classic_windows_look():
 app = tk.Tk()
 app.title("WAFgenius")
 
-# Apply the classic Windows look to the entire app
-setup_classic_windows_look()
+# Apply the style to the entire app
+setup_app_look()
 
 mainframe = ttk.Frame(app, padding="3 3 12 12")
 mainframe.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S))
