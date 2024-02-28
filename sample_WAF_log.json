@@ -36,6 +36,7 @@
   "responseCodeSent": null,
   "httpRequest": {
     "clientIp": "5.62.57.1",
+    "country": "RU",
     "headers": [
       {
         "name": "host",
