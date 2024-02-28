@@ -157,4 +157,5 @@ for ip in ips:
 with open('C:\Users\exampleuser\Desktop\Python\WAFgenius/ddos_log.json', 'w') as f:
     json.dump(log_entries, f, indent=2)
 
-print(f"Generated {len(log_entries)} log entries.")
+print(f"File saved to {os.path.abspath(file_path)}")
+
