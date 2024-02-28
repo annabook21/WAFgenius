@@ -151,7 +151,7 @@ def analyze_logs():
         messagebox.showerror("Error", "Please select a log file first.")
         return
 
-    def save_analysis_results():
+def save_analysis_results():
     global selected_file_path  # Use the global variable
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
