@@ -3,12 +3,10 @@ import geoip2.database
 import tkinter as tk
 from tkinter import filedialog, messagebox
 import os
+import json
 
 # Global variable to hold the path of the selected log file
 selected_file_path = None
-
-import pandas as pd
-import json
 
 def read_logs_into_dataframe(file_path):
     try:
