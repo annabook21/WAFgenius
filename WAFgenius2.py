@@ -9,17 +9,26 @@ selected_file_path = None
 
 def read_logs_into_dataframe(file_path):
     try:
-        # Load logs into a pandas DataFrame
-        df = pd.read_json(file_path, lines=True)
+        # Assuming the file is an array of JSON objects
+        df = pd.read_json(file_path, orient='records')
         
-        # Convert 'timestamp' column to datetime objects for easier analysis
+        # If your file contains a single JSON object (or if you want to wrap it in a list manually):
+        # with open(file_path, 'r') as f:
+        #     data = json.load(f)
+        #     # If the file contains a single object, wrap it in a list
+        #     if isinstance(data, dict):
+        #         data = [data]
+        #     df = pd.DataFrame(data)
+        
         if 'timestamp' in df.columns:
-            df['timestamp'] = pd.to_datetime(df['timestamp'])
+            # Convert timestamp from milliseconds to datetime
+            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
         
         return df
     except Exception as e:
         print(f"Error reading log file: {e}")
         return pd.DataFrame()  # Return an empty DataFrame on error
+
 
 def calculate_advanced_metrics(df):
     if df.empty:
