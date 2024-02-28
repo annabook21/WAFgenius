@@ -8,34 +8,13 @@
   "terminatingRuleMatchDetails": [],
   "httpSourceName": "CF",
   "httpSourceId": "E1DAKR35WPU1XL",
-  "ruleGroupList": [
-    {
-      "ruleGroupId": "arn:aws:wafv2:us-east-1:967656721914:global/rulegroup/api-sit1-npd-nser-cc-fileuploads/856e622b-990b-4968-9dd8-b5ab125aa968",
-      "terminatingRule": null,
-      "nonTerminatingMatchingRules": [],
-      "excludedRules": null,
-      "customerConfig": null
-    },
-    {
-      "ruleGroupId": "arn:aws:wafv2:us-east-1:967656721914:global/rulegroup/api-sit1-npd-nser-cc-challenge-token/b302672b-7ce0-4656-9220-fc6383a0f0b7",
-      "terminatingRule": null,
-      "nonTerminatingMatchingRules": [
-        {
-          "ruleId": "challenge_token-block-invalid",
-          "action": "COUNT",
-          "ruleMatchDetails": []
-        }
-      ],
-      "excludedRules": null,
-      "customerConfig": null
-    }
-  ],
+  "ruleGroupList": [],
   "rateBasedRuleList": [],
   "nonTerminatingMatchingRules": [],
   "requestHeadersInserted": null,
   "responseCodeSent": null,
   "httpRequest": {
-    "clientIp": "5.62.57.1",
+    "clientIp": "93.158.167.130",
     "headers": [
       {
         "name": "host",
@@ -44,17 +23,64 @@
       {
         "name": "content-length",
         "value": "236"
+      },
+      {
+        "name": "sec-ch-ua",
+        "value": "\"Google Chrome\";v=\"89\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"89\""
+      },
+      {
+        "name": "x-aws-waf-token",
+        "value": "90969c45-bab9-4594-bbe6-8a0ca85acfcc:HwoAhk6c1ccAAAAA:Gc0uOfBgkSBiwGsZg8Y7no4s4VTWIytSChnZHxSQl/7XbpctoPg8hBFC+ZPddMyfKDQrUBHwdCQqPXg99m8ypsf8cm2ymHXLvZuFl0rdTYRIjnj2mSUff1Ay6ZUI21mixdAHNxW8+++u92yLnMwXpMgr7S7Bgh/ijPIcYfpxV/5fhR5fnYGO79a7P8hpoDwFeQ=="
+      },
+      {
+        "name": "dnt",
+        "value": "1"
+      },
+      {
+        "name": "sec-ch-ua-mobile",
+        "value": "?0"
+      },
+      {
+        "name": "user-agent",
+        "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
+      },
+      {
+        "name": "content-type",
+        "value": "application/json"
+      },
+      {
+        "name": "accept",
+        "value": "application/json, text/plain, */*"
+      },
+      {
+        "name": "sec-fetch-site",
+        "value": "same-site"
+      },
+      {
+        "name": "sec-fetch-mode",
+        "value": "cors"
+      },
+      {
+        "name": "sec-fetch-dest",
+        "value": "empty"
+      },
+      {
+        "name": "accept-encoding",
+        "value": "gzip, deflate, br"
+      },
+      {
+        "name": "accept-language",
+        "value": "en-US,en;q=0.9"
       }
-      // Additional headers as needed
     ],
     "uri": "/ri/v1/interaction",
     "args": "",
     "httpVersion": "HTTP/2.0",
     "httpMethod": "POST",
-    "requestId": "RURequest1"
+    "requestId": "6SEj3mwhYdSRmKkJhIDmG2DqxSGXW39ZlqxG8wGZ2Gb_t5wxA0WTjg=="
   },
   "labels": [],
-  "requestBodySize": 0,
-  "requestBodySizeInspectedByWAF": 0,
+  "requestBodySize": 236,
+  "requestBodySizeInspectedByWAF": 236,
   "ja3Fingerprint": ""
 }
