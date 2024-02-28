@@ -14,10 +14,21 @@ def analyze_logs():
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
         return
+
+    # Ensure the file is ready for new data
+    open(output_file_path, 'w').close()  # Clear the file before writing new data
+    
+    # Calls to analysis functions
+    calculate_advanced_metrics(df, output_file_path)
+    analyze_frequent_terminating_rules(df, output_file_path)
+    analyze_top_source_ips_with_geoip(df, output_file_path)  # Updated call
+    analyze_time_patterns_of_blocked_requests(df, output_file_path)
+    analyze_request_patterns(df, output_file_path)
+    analyze_blocked_requests_by_source(df, output_file_path)
     
     output_file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
     if not output_file_path:
-        return  # User cancelled
+        return  # User canceled
     
     df = read_logs_into_dataframe(selected_file_path)
     if df.empty:
@@ -71,7 +82,6 @@ def read_logs_into_dataframe(file_path):
         print(f"Error reading log file: {e}")
         return pd.DataFrame()  # Return an empty DataFrame on error
 
-
 def calculate_advanced_metrics(df, output_path):
     with open(output_path, 'a') as file:  # Append mode
         if df.empty:
@@ -123,27 +133,37 @@ def calculate_advanced_metrics(df, output_path):
         country, city = lookup_geoip(ip)
         print(f" - {ip}: {count} requests, Location: {country}, {city}")
 
-def lookup_geoip(ip_address, df, output_path):
-    # Adjust the path to your GeoLite2 database file
-    db_path = 'GeoLite2-City.mmdb'
+def lookup_geoip(ip_address, db_path='GeoLite2-City.mmdb'):
     try:
         with geoip2.database.Reader(db_path) as reader:
             response = reader.city(ip_address)
-            country = response.country.name
-            city = response.city.name
+            country = response.country.name if response.country.name else "Unknown"
+            city = response.city.name if response.city.name else "Unknown"
             return country, city
     except Exception as e:
-        print(f"GeoIP lookup error: {e}")
-        return None, None
+        print(f"GeoIP lookup error for IP {ip_address}: {e}")
+        return "Unknown", "Unknown"
 
-def analyze_time_patterns_of_blocked_requests(df, output_file_path):
-    if 'timestamp' in df.columns:
-        df_blocked = df[df['action'] == 'BLOCK']
-        df_blocked['hour'] = df_blocked['timestamp'].dt.hour
-        blocked_requests_by_hour = df_blocked.groupby('hour').size()
-        
-        print("Blocked Requests by Hour:")
-        print(blocked_requests_by_hour)
+def analyze_top_source_ips_with_geoip(df, output_path, db_path='GeoLite2-City.mmdb'):
+    top_source_ips = df['sourceIP'].value_counts().head(5)
+    with open(output_path, 'a') as file:
+        file.write("Top Source IPs with Geo Location:\n")
+        for ip, count in top_source_ips.items():
+            country, city = lookup_geoip(ip, db_path)
+            file.write(f" - {ip}: {count} requests, Location: {country}, {city}\n")
+        file.write("\n")
+
+def analyze_time_patterns_of_blocked_requests(df, output_path):
+    with open(output_path, 'a') as file:
+        if 'timestamp' in df.columns:
+            df_blocked = df[df['action'] == 'BLOCK']
+            df_blocked['hour'] = df_blocked['timestamp'].dt.hour
+            blocked_requests_by_hour = df_blocked.groupby('hour').size()
+            
+            file.write("Blocked Requests by Hour:\n")
+            for hour, count in blocked_requests_by_hour.iteritems():
+                file.write(f" - {hour}: {count} requests\n")
+            file.write("\n")
 
 def analyze_frequent_terminating_rules(df, output_path):
     if 'terminatingRuleId' in df.columns:
@@ -155,23 +175,30 @@ def analyze_frequent_terminating_rules(df, output_path):
                 file.write(f" - {rule}: {count} times\n")
             file.write("\n")
 
-def analyze_request_patterns(df, output_file_path):
-    if 'httpRequest' in df.columns:
-        df_blocked = df[df['action'] == 'BLOCK']
-        methods = df_blocked['httpRequest'].apply(lambda x: x['httpMethod']).value_counts()
-        paths = df_blocked['httpRequest'].apply(lambda x: x['uri']).value_counts().head(10)
-        
-        print("Most Common HTTP Methods for Blocked Requests:")
-        print(methods)
-        print("\nMost Common Request Paths for Blocked Requests:")
-        print(paths)
+def analyze_request_patterns(df, output_path):
+    with open(output_path, 'a') as file:
+        if 'httpRequest' in df.columns:
+            df_blocked = df[df['action'] == 'BLOCK']
+            methods = df_blocked['httpRequest'].apply(lambda x: x['httpMethod']).value_counts()
+            paths = df_blocked['httpRequest'].apply(lambda x: x['uri']).value_counts().head(10)
+            
+            file.write("Most Common HTTP Methods for Blocked Requests:\n")
+            for method, count in methods.items():
+                file.write(f" - {method}: {count} requests\n")
+            file.write("\nMost Common Request Paths for Blocked Requests:\n")
+            for path, count in paths.items():
+                file.write(f" - {path}: {count} requests\n")
+            file.write("\n")
 
-def analyze_blocked_requests_by_source(df, output_file_path):
-    if 'httpSourceName' in df.columns:
-        blocked_by_source = df[df['action'] == 'BLOCK'].groupby('httpSourceName').size().sort_values(ascending=False)
-        
-        print("Blocked Requests by HTTP Source:")
-        print(blocked_by_source)
+def analyze_blocked_requests_by_source(df, output_path):
+    with open(output_path, 'a') as file:
+        if 'httpSourceName' in df.columns:
+            blocked_by_source = df[df['action'] == 'BLOCK'].groupby('httpSourceName').size().sort_values(ascending=False)
+            
+            file.write("Blocked Requests by HTTP Source:\n")
+            for source, count in blocked_by_source.iteritems():
+                file.write(f" - {source}: {count} requests\n")
+            file.write("\n")
 
 def main():
     log_file_path = 'path/to/your/logfile.json'  # Update this path to your log file
