@@ -69,7 +69,7 @@ def calculate_advanced_metrics(df):
     # Time Analysis (requests over time)
     if 'timestamp' in df.columns:
         df.set_index('timestamp', inplace=True)
-        requests_over_time = df.resample('H').size()  # Resampling by hour
+        requests_over_time = df.resample('h').size()  # Resampling by hour
         print("\nRequests Over Time (Hourly):")
         for time, count in requests_over_time.items():
             print(f" - {time}: {count} requests")
@@ -93,6 +93,40 @@ def lookup_geoip(ip_address):
     except Exception as e:
         print(f"GeoIP lookup error: {e}")
         return None, None
+
+def analyze_time_patterns_of_blocked_requests(df):
+    if 'timestamp' in df.columns:
+        df_blocked = df[df['action'] == 'BLOCK']
+        df_blocked['hour'] = df_blocked['timestamp'].dt.hour
+        blocked_requests_by_hour = df_blocked.groupby('hour').size()
+        
+        print("Blocked Requests by Hour:")
+        print(blocked_requests_by_hour)
+
+def analyze_frequent_terminating_rules(df):
+    if 'terminatingRuleId' in df.columns:
+        top_terminating_rules = df[df['action'] == 'BLOCK']['terminatingRuleId'].value_counts().head(10)
+        
+        print("Top Terminating Rules for Blocked Requests:")
+        print(top_terminating_rules)
+
+def analyze_request_patterns(df):
+    if 'httpRequest' in df.columns:
+        df_blocked = df[df['action'] == 'BLOCK']
+        methods = df_blocked['httpRequest'].apply(lambda x: x['httpMethod']).value_counts()
+        paths = df_blocked['httpRequest'].apply(lambda x: x['uri']).value_counts().head(10)
+        
+        print("Most Common HTTP Methods for Blocked Requests:")
+        print(methods)
+        print("\nMost Common Request Paths for Blocked Requests:")
+        print(paths)
+
+def analyze_blocked_requests_by_source(df):
+    if 'httpSourceName' in df.columns:
+        blocked_by_source = df[df['action'] == 'BLOCK'].groupby('httpSourceName').size().sort_values(ascending=False)
+        
+        print("Blocked Requests by HTTP Source:")
+        print(blocked_by_source)
 
 def main():
     log_file_path = 'path/to/your/logfile.json'  # Update this path to your log file
