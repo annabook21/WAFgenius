@@ -104,12 +104,14 @@ def analyze_time_patterns_of_blocked_requests(df):
         print("Blocked Requests by Hour:")
         print(blocked_requests_by_hour)
 
-def analyze_frequent_terminating_rules(df):
+def analyze_frequent_terminating_rules(df, output_path='analysis_output.txt'):
     if 'terminatingRuleId' in df.columns:
         top_terminating_rules = df[df['action'] == 'BLOCK']['terminatingRuleId'].value_counts().head(10)
         
-        print("Top Terminating Rules for Blocked Requests:")
-        print(top_terminating_rules)
+        with open(output_path, 'w') as file:
+            file.write("Top Terminating Rules for Blocked Requests:\n")
+            for rule, count in top_terminating_rules.items():
+                file.write(f" - {rule}: {count} times\n")
 
 def analyze_request_patterns(df):
     if 'httpRequest' in df.columns:
@@ -148,7 +150,25 @@ def analyze_logs():
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
         return
+
+    def save_analysis_results():
+    global selected_file_path  # Use the global variable
+    if not selected_file_path:
+        messagebox.showerror("Error", "Please select a log file first.")
+        return
     
+    output_file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if not output_file_path:  # The user cancelled the save dialog
+        return
+    
+    df = read_logs_into_dataframe(selected_file_path)
+    if df.empty:
+        messagebox.showinfo("Analysis Result", "The log file contains no data.")
+    else:
+        # Call your analysis functions here, passing `output_file_path` as an argument
+        analyze_frequent_terminating_rules(df, output_file_path)
+        messagebox.showinfo("Analysis Complete", f"The log analysis has been saved to {output_file_path}.")
+
     # Proceed with analysis using the selected file path
     df = read_logs_into_dataframe(selected_file_path)
     if df.empty:
@@ -201,6 +221,9 @@ openFileBtn.grid(column=1, row=1, sticky=tk.W, pady=4)
 
 analyzeBtn = ttk.Button(mainframe, text="Analyze Logs", command=analyze_logs)
 analyzeBtn.grid(column=2, row=1, sticky=tk.W, pady=4)
+
+saveResultsBtn = ttk.Button(app, text="Save Results", command=save_analysis_results)
+saveResultsBtn.pack()
 
 # Assuming `open_file` and `analyze_logs` are defined elsewhere in your code
 
