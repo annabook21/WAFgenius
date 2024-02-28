@@ -83,7 +83,7 @@ def calculate_advanced_metrics(df):
         print(f" - {ip}: {count} requests, Location: {country}, {city}")
 
 def lookup_geoip(ip_address):
-    # Adjust the path to your GeoLite2 database file
+    # Assumes GeoLite2-City file is in same path as application.
     db_path = 'GeoLite2-City.mmdb'
     try:
         with geoip2.database.Reader(db_path) as reader:
@@ -171,18 +171,15 @@ def setup_classic_windows_look():
     style = ttk.Style()
     style.theme_use('clam')  # Use the 'clam' theme as a base for a classic look
     
-    # Configure the style of widgets
+    # style of widgets
     style.configure('TButton', foreground='black', background='#d3d3d3', font=('MS Sans Serif', 10))
     style.configure('TLabel', foreground='black', background='#f0f0f0', font=('MS Sans Serif', 10))
     style.configure('TFrame', background='#f0f0f0')
     
-    # Configure specific widget options if needed
-    # For example, button styling
+    # button styling
     style.map('TButton',
               foreground=[('pressed', 'red'), ('active', 'blue')],
               background=[('pressed', '!disabled', 'black'), ('active', '#c0c0c0')])
-    
-    # You can customize this further as per your needs
 
 # GUI Setup
 app = tk.Tk()
@@ -202,7 +199,4 @@ openFileBtn.grid(column=1, row=1, sticky=tk.W, pady=4)
 analyzeBtn = ttk.Button(mainframe, text="Analyze Logs", command=analyze_logs)
 analyzeBtn.grid(column=2, row=1, sticky=tk.W, pady=4)
 
-# Assuming `open_file` and `analyze_logs` are defined elsewhere in your code
-
 app.mainloop()
-
