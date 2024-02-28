@@ -126,6 +126,21 @@ def analyze_blocked_requests_by_source(df):
         print("Blocked Requests by HTTP Source:")
         print(blocked_by_source)
 
+def setup_classic_windows_look():
+    style = ttk.Style()
+    style.theme_use('clam')  # Set the theme to 'clam' for a classic look
+    
+    # Configure the style for buttons
+    style.configure('TButton', foreground='black', background='#d3d3d3', font=('MS Sans Serif', 10), borderwidth=1)
+    style.map('TButton',
+              foreground=[('pressed', 'red'), ('active', 'blue')],
+              background=[('pressed', '!disabled', 'black'), ('active', '#c0c0c0')])
+    
+    # Configure the style for labels
+    style.configure('TLabel', foreground='black', background='#f0f0f0', font=('MS Sans Serif', 10))
+    
+    # Configure the style for frames
+    style.configure('TFrame', background='#f0f0f0')
 
 app = tk.Tk()
 app.title("WAFgenius")
