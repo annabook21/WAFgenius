@@ -2,6 +2,9 @@ import json
 import random
 from datetime import datetime, timedelta
 
+# Define the file path at the top of your script
+file_path = 'C:\\Users\\YourUsername\\Desktop\\ddos_log.json'  # Replace with your actual path
+
 # Base log entry from which to create the other entries
 base_log_entry = {
     "timestamp": 1702556780000,
