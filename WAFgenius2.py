@@ -1,6 +1,7 @@
 import pandas as pd
 import geoip2.database
 import tkinter as tk
+from tkinter import ttk  # Import ttk module for themed widgets
 from tkinter import filedialog, messagebox
 import os
 import json
@@ -166,17 +167,42 @@ def analyze_logs():
         # For example, displaying top source IPs, blocked requests, etc., in the GUI.
         messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
 
+def setup_classic_windows_look():
+    style = ttk.Style()
+    style.theme_use('clam')  # Use the 'clam' theme as a base for a classic look
+    
+    # Configure the style of widgets
+    style.configure('TButton', foreground='black', background='#d3d3d3', font=('MS Sans Serif', 10))
+    style.configure('TLabel', foreground='black', background='#f0f0f0', font=('MS Sans Serif', 10))
+    style.configure('TFrame', background='#f0f0f0')
+    
+    # Configure specific widget options if needed
+    # For example, button styling
+    style.map('TButton',
+              foreground=[('pressed', 'red'), ('active', 'blue')],
+              background=[('pressed', '!disabled', 'black'), ('active', '#c0c0c0')])
+    
+    # You can customize this further as per your needs
+
 # GUI Setup
 app = tk.Tk()
 app.title("WAFgenius")
 
-canvas = tk.Canvas(app, height=600, width=800)
-canvas.pack()
+# Apply the classic Windows look to the entire app
+setup_classic_windows_look()
 
-openFileBtn = tk.Button(app, text="Open Log File", padx=10, pady=5, fg="white", bg="#263D42", command=open_file)
-openFileBtn.pack()
+mainframe = ttk.Frame(app, padding="3 3 12 12")
+mainframe.grid(column=0, row=0, sticky=(tk.W, tk.E, tk.N, tk.S))
+app.columnconfigure(0, weight=1)
+app.rowconfigure(0, weight=1)
 
-analyzeBtn = tk.Button(app, text="Analyze Logs", padx=10, pady=5, fg="white", bg="#263D42", command=analyze_logs)
-analyzeBtn.pack()
+openFileBtn = ttk.Button(mainframe, text="Open Log File", command=open_file)
+openFileBtn.grid(column=1, row=1, sticky=tk.W, pady=4)
+
+analyzeBtn = ttk.Button(mainframe, text="Analyze Logs", command=analyze_logs)
+analyzeBtn.grid(column=2, row=1, sticky=tk.W, pady=4)
+
+# Assuming `open_file` and `analyze_logs` are defined elsewhere in your code
 
 app.mainloop()
+
