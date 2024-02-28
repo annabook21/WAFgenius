@@ -1,86 +1,71 @@
 {
-  "timestamp": 1702247109801,
+  "timestamp": 1702556780000,
   "formatVersion": 1,
-  "webaclId": "arn:aws:wafv2:us-east-1:967656721914:global/webacl/api-sit1-npd-nser-cc/48aac4cb-a29e-400b-b6d0-a3ce6a16b250",
-  "terminatingRuleId": "Default_Action",
+  "webaclId": "arn:aws:wafv2:us-east-1:123456789012:global/webacl/my-webacl-name/12345678-90ab-cdef-1234-567890abcdef",
+  "terminatingRuleId": "Custom_Rule_Block",
   "terminatingRuleType": "REGULAR",
   "action": "BLOCK",
   "terminatingRuleMatchDetails": [],
-  "httpSourceName": "CF",
-  "httpSourceId": "E1DAKR35WPU1XL",
-  "ruleGroupList": [],
+  "httpSourceName": "ALB",
+  "httpSourceId": "E2JK6G7H8I9J0K",
+  "ruleGroupList": [
+    {
+      "ruleGroupId": "arn:aws:wafv2:us-east-1:123456789012:global/rulegroup/my-rulegroup-name/23456789-abcd-ef01-2345-6789abcdef01",
+      "terminatingRule": null,
+      "nonTerminatingMatchingRules": [],
+      "excludedRules": null,
+      "customerConfig": null
+    },
+    {
+      "ruleGroupId": "arn:aws:wafv2:us-east-1:123456789012:global/rulegroup/another-rulegroup-name/3456789a-bcde-f012-3456-789abcdef012",
+      "terminatingRule": null,
+      "nonTerminatingMatchingRules": [
+        {
+          "ruleId": "another_rule_id",
+          "action": "COUNT",
+          "ruleMatchDetails": []
+        }
+      ],
+      "excludedRules": null,
+      "customerConfig": null
+    }
+  ],
   "rateBasedRuleList": [],
   "nonTerminatingMatchingRules": [],
   "requestHeadersInserted": null,
   "responseCodeSent": null,
   "httpRequest": {
-    "clientIp": "93.158.167.130",
+    "clientIp": "5.62.57.1",
     "headers": [
       {
         "name": "host",
-        "value": "api-sit1.npd.nser.cc"
+        "value": "my-api.example.com"
       },
       {
         "name": "content-length",
-        "value": "236"
-      },
-      {
-        "name": "sec-ch-ua",
-        "value": "\"Google Chrome\";v=\"89\", \" Not;A Brand\";v=\"99\", \"Chromium\";v=\"89\""
-      },
-      {
-        "name": "x-aws-waf-token",
-        "value": "90969c45-bab9-4594-bbe6-8a0ca85acfcc:HwoAhk6c1ccAAAAA:Gc0uOfBgkSBiwGsZg8Y7no4s4VTWIytSChnZHxSQl/7XbpctoPg8hBFC+ZPddMyfKDQrUBHwdCQqPXg99m8ypsf8cm2ymHXLvZuFl0rdTYRIjnj2mSUff1Ay6ZUI21mixdAHNxW8+++u92yLnMwXpMgr7S7Bgh/ijPIcYfpxV/5fhR5fnYGO79a7P8hpoDwFeQ=="
-      },
-      {
-        "name": "dnt",
-        "value": "1"
-      },
-      {
-        "name": "sec-ch-ua-mobile",
-        "value": "?0"
+        "value": "532"
       },
       {
         "name": "user-agent",
-        "value": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.82 Safari/537.36"
+        "value": "Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)"
       },
       {
-        "name": "content-type",
-        "value": "application/json"
+        "name": "x-forwarded-for",
+        "value": "5.101.0.209"
       },
       {
         "name": "accept",
-        "value": "application/json, text/plain, */*"
-      },
-      {
-        "name": "sec-fetch-site",
-        "value": "same-site"
-      },
-      {
-        "name": "sec-fetch-mode",
-        "value": "cors"
-      },
-      {
-        "name": "sec-fetch-dest",
-        "value": "empty"
-      },
-      {
-        "name": "accept-encoding",
-        "value": "gzip, deflate, br"
-      },
-      {
-        "name": "accept-language",
-        "value": "en-US,en;q=0.9"
+        "value": "application/json"
       }
     ],
-    "uri": "/ri/v1/interaction",
-    "args": "",
-    "httpVersion": "HTTP/2.0",
-    "httpMethod": "POST",
-    "requestId": "6SEj3mwhYdSRmKkJhIDmG2DqxSGXW39ZlqxG8wGZ2Gb_t5wxA0WTjg=="
+    "uri": "/path/to/resource",
+    "args": "query=parameters",
+    "httpVersion": "HTTP/1.1",
+    "httpMethod": "GET",
+    "requestId": "abcdef123456-7890-abcd-ef12-34567890abcd"
   },
   "labels": [],
-  "requestBodySize": 236,
-  "requestBodySizeInspectedByWAF": 236,
-  "ja3Fingerprint": ""
+  "requestBodySize": 532,
+  "requestBodySizeInspectedByWAF": 532,
+  "ja3Fingerprint": "d8e8fca2dc0f896fd7cb4cb0031ba249"
 }
