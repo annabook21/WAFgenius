@@ -27,7 +27,7 @@ def read_logs_into_dataframe(file_path):
                 'timestamp': pd.to_datetime(entry['timestamp'], unit='ms'),
                 'action': entry['action'],
                 'sourceIP': entry['httpRequest']['clientIp'],
-                'country': entry['httpRequest']['country'],
+                
                 # Add more fields as necessary
             }
             processed_data.append(processed_entry)
