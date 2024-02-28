@@ -9,6 +9,37 @@ import json
 # Global variable to hold the path of the selected log file
 selected_file_path = None
 
+def analyze_logs():
+    global selected_file_path
+    if not selected_file_path:
+        messagebox.showerror("Error", "Please select a log file first.")
+        return
+    
+    output_file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if not output_file_path:
+        return  # User cancelled
+    
+    df = read_logs_into_dataframe(selected_file_path)
+    if df.empty:
+        with open(output_file_path, 'w') as file:  # Clear or create the file
+            file.write("The log file contains no data.\n")
+        messagebox.showinfo("Analysis Result", "The log file contains no data.")
+        return
+    
+    # Ensure the file is ready for new data
+    open(output_file_path, 'w').close()  # Clear the file before writing new data
+    
+    # Calls to analysis functions
+    calculate_advanced_metrics(df, output_file_path)
+    analyze_frequent_terminating_rules(df, output_file_path)
+    lookup_geoip(df, output_file_path)
+    analyze_time_patterns_of_blocked_requests(df, output_file_path)
+    analyze_frequent_terminating_rules(df, output_file_path)
+    analyze_request_patterns(df, output_file_path)
+    analyze_blocked_requests_by_source(df, output_file_path)
+   
+    messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the output file for details.")
+
 def read_logs_into_dataframe(file_path):
     try:
         # Load the entire JSON file content
@@ -41,10 +72,20 @@ def read_logs_into_dataframe(file_path):
         return pd.DataFrame()  # Return an empty DataFrame on error
 
 
-def calculate_advanced_metrics(df):
-    if df.empty:
-        print("No data to analyze.")
-        return
+def calculate_advanced_metrics(df, output_path):
+    with open(output_path, 'a') as file:  # Append mode
+        if df.empty:
+            file.write("No data to analyze.\n")
+            return
+        
+        total_requests = len(df)
+        allowed_requests = len(df[df['action'] == 'ALLOW'])
+        blocked_requests = len(df[df['action'] == 'BLOCK'])
+        
+        # Write analysis results to file
+        file.write(f"Total Requests: {total_requests}\n")
+        file.write(f"Allowed Requests: {allowed_requests}\n")
+        file.write(f"Blocked Requests: {blocked_requests}\n\n")
     
     # Continue with basic metrics
     total_requests = len(df)
@@ -82,7 +123,7 @@ def calculate_advanced_metrics(df):
         country, city = lookup_geoip(ip)
         print(f" - {ip}: {count} requests, Location: {country}, {city}")
 
-def lookup_geoip(ip_address):
+def lookup_geoip(ip_address, df, output_path):
     # Adjust the path to your GeoLite2 database file
     db_path = 'GeoLite2-City.mmdb'
     try:
@@ -95,7 +136,7 @@ def lookup_geoip(ip_address):
         print(f"GeoIP lookup error: {e}")
         return None, None
 
-def analyze_time_patterns_of_blocked_requests(df):
+def analyze_time_patterns_of_blocked_requests(df, output_file_path):
     if 'timestamp' in df.columns:
         df_blocked = df[df['action'] == 'BLOCK']
         df_blocked['hour'] = df_blocked['timestamp'].dt.hour
@@ -104,14 +145,17 @@ def analyze_time_patterns_of_blocked_requests(df):
         print("Blocked Requests by Hour:")
         print(blocked_requests_by_hour)
 
-def analyze_frequent_terminating_rules(df):
+def analyze_frequent_terminating_rules(df, output_path):
     if 'terminatingRuleId' in df.columns:
         top_terminating_rules = df[df['action'] == 'BLOCK']['terminatingRuleId'].value_counts().head(10)
         
-        print("Top Terminating Rules for Blocked Requests:")
-        print(top_terminating_rules)
+        with open(output_path, 'a') as file:
+            file.write("Top Terminating Rules for Blocked Requests:\n")
+            for rule, count in top_terminating_rules.items():
+                file.write(f" - {rule}: {count} times\n")
+            file.write("\n")
 
-def analyze_request_patterns(df):
+def analyze_request_patterns(df, output_file_path):
     if 'httpRequest' in df.columns:
         df_blocked = df[df['action'] == 'BLOCK']
         methods = df_blocked['httpRequest'].apply(lambda x: x['httpMethod']).value_counts()
@@ -122,7 +166,7 @@ def analyze_request_patterns(df):
         print("\nMost Common Request Paths for Blocked Requests:")
         print(paths)
 
-def analyze_blocked_requests_by_source(df):
+def analyze_blocked_requests_by_source(df, output_file_path):
     if 'httpSourceName' in df.columns:
         blocked_by_source = df[df['action'] == 'BLOCK'].groupby('httpSourceName').size().sort_values(ascending=False)
         
@@ -144,10 +188,15 @@ def open_file():
         print(f"File selected: {selected_file_path}")  # Optional: confirm the selected file path
 
 def analyze_logs():
-    global selected_file_path  # Although not necessary for reading, it's good practice
+    global selected_file_path
     if not selected_file_path:
         messagebox.showerror("Error", "Please select a log file first.")
         return
+    
+    output_file_path = filedialog.asksaveasfilename(defaultextension=".txt", 
+                                                    filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    if not output_file_path:
+        return  # User cancelled the save operation
     
     # Proceed with analysis using the selected file path
     df = read_logs_into_dataframe(selected_file_path)
