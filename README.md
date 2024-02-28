@@ -28,8 +28,10 @@ The WAFgenius provides detailed insights into web traffic and security threats b
 
 ```bash
 pip install pandas geoip2
+```
 
 ## Usage
+
 1. Clone or download the repository to your local machine.
 2. Navigate to the project directory.
 3. Ensure that you have Python and the required packages installed.
@@ -39,4 +41,14 @@ pip install pandas geoip2
 
 ### Running the GUI
 - Alternatively, you can run the GUI interface by executing the script. The GUI allows you to select a log file using a file dialog and analyze it with a click of a button.
+
+## License
+
+Distributed under the MIT License. See `LICENSE` for more information.
+
+## Contact
+
+Anna Booker - https://www.linkedin.com/in/annadbooker
+
+Project Link: [https://github.com/annabook21/WAFgenius](https://github.com/annabook21/WAFgenius)
 
