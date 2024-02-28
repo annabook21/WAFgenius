@@ -126,6 +126,15 @@ def analyze_blocked_requests_by_source(df):
         print("Blocked Requests by HTTP Source:")
         print(blocked_by_source)
 
+def open_file():
+    global selected_file_path
+    filename = filedialog.askopenfilename(initialdir="/", title="Select File",
+                                          filetypes=(("json files", "*.json"), ("all files", "*.*")))
+    if filename:
+        selected_file_path = filename
+        print(f"File selected: {selected_file_path}")  # Confirm the selected file path
+
+
 def setup_classic_windows_look():
     style = ttk.Style()
     style.theme_use('clam')  # Set the theme to 'clam' for a classic look
