@@ -15,40 +15,30 @@ def analyze_logs():
         messagebox.showerror("Error", "Please select a log file first.")
         return
 
-    # Ensure the file is ready for new data
-    open(output_file_path, 'w').close()  # Clear the file before writing new data
-    
-    # Calls to analysis functions
-    calculate_advanced_metrics(df, output_file_path)
-    analyze_frequent_terminating_rules(df, output_file_path)
-    analyze_top_source_ips_with_geoip(df, output_file_path)  # Updated call
-    analyze_time_patterns_of_blocked_requests(df, output_file_path)
-    analyze_request_patterns(df, output_file_path)
-    analyze_blocked_requests_by_source(df, output_file_path)
-    
-    output_file_path = filedialog.asksaveasfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+    output_file_path = filedialog.asksaveasfilename(defaultextension=".txt",
+                                                    filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
     if not output_file_path:
         return  # User canceled
-    
+
+    # Read the log data into a DataFrame
     df = read_logs_into_dataframe(selected_file_path)
     if df.empty:
-        with open(output_file_path, 'w') as file:  # Clear or create the file
+        with open(output_file_path, 'w') as file:  # Clear or create the file, and write "no data" message
             file.write("The log file contains no data.\n")
         messagebox.showinfo("Analysis Result", "The log file contains no data.")
         return
-    
-    # Ensure the file is ready for new data
-    open(output_file_path, 'w').close()  # Clear the file before writing new data
-    
-    # Calls to analysis functions
+
+    # Clear the file before writing new data (only if df is not empty)
+    open(output_file_path, 'w').close()
+
+    # Call analysis functions in the intended order
     calculate_advanced_metrics(df, output_file_path)
     analyze_frequent_terminating_rules(df, output_file_path)
-    lookup_geoip(df, output_file_path)
+    analyze_top_source_ips_with_geoip(df, output_file_path)
     analyze_time_patterns_of_blocked_requests(df, output_file_path)
-    analyze_frequent_terminating_rules(df, output_file_path)
     analyze_request_patterns(df, output_file_path)
     analyze_blocked_requests_by_source(df, output_file_path)
-   
+
     messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the output file for details.")
 
 def read_logs_into_dataframe(file_path):
