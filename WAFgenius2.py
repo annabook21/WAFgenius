@@ -7,22 +7,34 @@ import os
 # Global variable to hold the path of the selected log file
 selected_file_path = None
 
+import pandas as pd
+import json
+
 def read_logs_into_dataframe(file_path):
     try:
-        # Assuming the file is an array of JSON objects
-        df = pd.read_json(file_path, orient='records')
+        # Load the entire JSON file content
+        with open(file_path, 'r') as file:
+            data = json.load(file)  # Assuming the file contains an array of objects
         
-        # If your file contains a single JSON object (or if you want to wrap it in a list manually):
-        # with open(file_path, 'r') as f:
-        #     data = json.load(f)
-        #     # If the file contains a single object, wrap it in a list
-        #     if isinstance(data, dict):
-        #         data = [data]
-        #     df = pd.DataFrame(data)
+        # If the data is a single dictionary (i.e., one log entry), wrap it in a list
+        if isinstance(data, dict):
+            data = [data]
+
+        # Preprocess and flatten the data as needed
+        processed_data = []
+        for entry in data:
+            # Example of extracting specific fields and handling nested data
+            processed_entry = {
+                'timestamp': pd.to_datetime(entry['timestamp'], unit='ms'),
+                'action': entry['action'],
+                'sourceIP': entry['httpRequest']['clientIp'],
+                'country': entry['httpRequest']['country'],
+                # Add more fields as necessary
+            }
+            processed_data.append(processed_entry)
         
-        if 'timestamp' in df.columns:
-            # Convert timestamp from milliseconds to datetime
-            df['timestamp'] = pd.to_datetime(df['timestamp'], unit='ms')
+        # Create DataFrame from processed data
+        df = pd.DataFrame(processed_data)
         
         return df
     except Exception as e:
