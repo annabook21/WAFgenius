@@ -83,7 +83,7 @@ def calculate_advanced_metrics(df):
 
 def lookup_geoip(ip_address):
     # Adjust the path to your GeoLite2 database file
-    db_path = 'path/to/GeoLite2-City.mmdb'
+    db_path = 'GeoLite2-City.mmdb'
     try:
         with geoip2.database.Reader(db_path) as reader:
             response = reader.city(ip_address)
