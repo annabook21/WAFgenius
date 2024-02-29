@@ -11,34 +11,34 @@ selected_file_path = None
 
 def read_logs_into_dataframe(file_path):
     try:
-        # Load the entire JSON file content
         with open(file_path, 'r') as file:
-            data = json.load(file)  # Assuming the file contains an array of objects
+            data = json.load(file)  # Load JSON data
         
-        # If the data is a single dictionary (i.e., one log entry), wrap it in a list
+        # If the data is a single dictionary, wrap it in a list
         if isinstance(data, dict):
             data = [data]
 
         # Preprocess and flatten the data as needed
         processed_data = []
         for entry in data:
-            # Example of extracting specific fields and handling nested data
+            # Parse the timestamp and handle the format correctly
+            timestamp = pd.to_datetime(entry['@timestamp'].split('.')[0], format='%Y-%m-%d %H:%M:%S')
+            
+            # Process other fields as needed
             processed_entry = {
-                'timestamp': pd.to_datetime(entry['timestamp'], unit='ms'),
-                'action': entry['action'],
-                'sourceIP': entry['httpRequest']['clientIp'],
-                
-                # Add more fields as necessary
+                'timestamp': timestamp,
+                'action': entry['event.alert.action'],
+                'sourceIP': entry['event.src_ip'],
+                # Include other fields as necessary
             }
             processed_data.append(processed_entry)
         
-        # Create DataFrame from processed data
+        # Create a DataFrame from the processed data
         df = pd.DataFrame(processed_data)
-        
         return df
     except Exception as e:
         print(f"Error reading log file: {e}")
-        return pd.DataFrame()  # Return an empty DataFrame on error
+        return pd.DataFrame()
 
 
 def calculate_advanced_metrics(df):
@@ -198,3 +198,4 @@ analyzeBtn = ttk.Button(mainframe, text="Analyze Logs", command=analyze_logs)
 analyzeBtn.grid(column=2, row=1, sticky=tk.W, pady=4)
 
 app.mainloop()
+
