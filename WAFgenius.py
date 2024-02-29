@@ -156,14 +156,6 @@ def analyze_logs():
     else:
         calculate_advanced_metrics(df)
         messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
-    
-    # Read and analyze the log file
-    df = read_logs_into_dataframe(selected_file_path)
-    if df.empty:
-        messagebox.showinfo("Analysis Result", "The selected log file contains no data.")
-    else:
-        calculate_advanced_metrics(df)
-        messagebox.showinfo("Analysis Complete", "The log analysis is complete. Check the console/output window for details.")
 
 def setup_app_look():
     style = ttk.Style()
